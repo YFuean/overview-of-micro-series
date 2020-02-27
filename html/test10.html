@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../image/VIP.png" type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //字符串方法，search(),replace()
+    var str1 = 'Visit W3cschool'
+    var n = str1.search(/w3cschool/i)
+    console.log(n)
+
+    var str2 = 'Visit Microsoft'
+    var res = str2.replace(/microsoft/i, 'w3cschool')
+    console.log(res)
+
+    //test()
+    var patt1 = /e/.test('The best things in life are free!')
+    console.log(patt1)
+
+    //exec()
+    var patt2 = /e/.exec('The best things in life are free!')
+    console.log(patt2)
+
+    //compile()
+    var patt3 = new RegExp('e')
+    console.log(patt3.test('The best things in life are free!'))
+    patt3.compile('d')
+    console.log(patt3.test('The best things in life are free!'))
+  </script>
+</html>

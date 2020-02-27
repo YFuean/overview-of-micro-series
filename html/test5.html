@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../image/VIP.png" type="image/x-icon" />
+    <title>Document</title>
+    <script>
+      //两种方式访问对象的属性
+      var person = {
+        name: 'John',
+        age: 12,
+        favColor: 'green',
+        height: 142
+      }
+      var x = person.name
+      var y = person['age']
+      console.log('name:' + x)
+      console.log('age:' + y)
+
+      //内置长度属性
+      var course = { name: 'JS', lessons: 54 }
+      console.log(course.name.length)
+
+      //用.或[]来更新对象的属性
+      var ourDog = {
+        name: 'Camper',
+        legs: 4,
+        tails: 1,
+        friends: ['everything']
+      }
+      ourDog.name = 'Happy Camper' //ourDog['name'] = 'Happy Camper'
+      console.log(ourDog)
+
+      //用.或[]来添加属性
+      ourDog.bark = 'bow-bow' //等于ourDog['bark']='bow-bow'
+      console.log(ourDog)
+
+      //删除属性
+      delete ourDog['tails']
+      console.log(ourDog)
+
+      //对象方法
+      var message = 'Hello World'
+      console.log('message:' + message)
+      var x = message.toUpperCase() //将文本转换为大写
+      console.log('大写：' + x)
+
+      //[]读取对象属性
+      var a = 'age'
+      var myObj = {
+        name: 'Leon',
+        age: 28,
+        eat: function() {
+          return "I'm eating"
+        }
+      }
+      console.log(myObj['name'])
+      console.log(myObj[a])
+      console.log(myObj['eat']())
+
+      //用函数构造对象
+      function perso(firstname, lastname, age, eyecolor) {
+        ;(this.firstname = firstname), (this.lastname = lastname), (this.age = age), (this.eyecolor = eyecolor)
+      }
+      var father = new perso('John', 'doe', 50, 'blue')
+      var mother = new perso('Sally', 'rally', 48, 'green')
+      console.log(father.firstname)
+      console.log(mother.age)
+
+      //对象初始化
+      var Summer = { name: 'Summer', age: 23 }
+      var Moon = { name: 'Moon', age: 25 }
+
+      //添加方法
+      function per(name, age) {
+        ;(this.name = name),
+          (this.age = age),
+          (this.changeName = function(name) {
+            this.name = name
+          }),
+          (this.yearOfBirth = bornYear) // 关联bornYear
+      }
+      function bornYear() {
+        return new Date().getFullYear()
+      }
+      var p = new per('Loen', 28)
+      p.changeName('John')
+      console.log(p)
+    </script>
+  </head>
+  <body></body>
+</html>

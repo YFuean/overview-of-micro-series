@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //if\if-else语句
+      var num = 10
+      if (num < 20) {
+        document.write('在线学习JavaScript')
+      }
+      var course = 8
+      if (course == 1) {
+        document.write('<h1>HTML教程</h1>')
+      } else if (course == 2) {
+        document.write('<h1>css教程</h1>')
+      } else {
+        document.write('<h1>javaScript教程</h1>')
+      }
+
+      //switch语句
+      function myFunction() {
+        var x
+        var d = new Date().getDay() //获取周几的方法
+        switch (d) {
+          case 0:
+            x = '今天星期日'
+            break
+          case 1:
+            x = '今天星期一'
+            break
+          case 2:
+            x = '今天星期二'
+            break
+          case 3:
+            x = '今天星期三'
+            break
+          case 4:
+            x = '今天星期四'
+            break
+          case 5:
+            x = '今天星期五'
+            break
+          case 6:
+            x = '今天星期六'
+            break
+        }
+        return x
+      }
+      alert(myFunction())
+
+      //for循环
+      var cars = ['奔驰', '宝马', '大众', '丰田', '路虎', '福特', '本田', '特斯拉']
+      for (var i = 0; i < cars.length; i++) {
+        document.write(cars[i] + '<br>')
+      }
+      for (var ia = 0; ia < 5; ) {
+        document.write(ia)
+        ia++
+      }
+      document.write('<br>')
+      var myArray = [] //从1到9奇数添加到muArray
+      for (var j = 1; j < 10; j += 2) {
+        myArray.push(i)
+      }
+      document.write(myArray.length + '<br>')
+
+      //while、do while循环
+      var n = '',
+        indix = 0
+      do {
+        n = n + 'The number id ' + indix + '<br>'
+        indix++
+      } while (indix < 5)
+      document.write(n)
+
+      document.write('******<br>')
+      //break跳出循环
+      var m = ''
+      for (a = 0; a < 10; a++) {
+        if (a == 3) {
+          break
+        }
+        m = m + 'The number id ' + a + '<br>'
+      }
+      document.write(m)
+
+      document.write('******<br>')
+      //continue语句
+      var o = ''
+      for (b = 0; b <= 10; b++) {
+        if (b == 3) {
+          continue
+        }
+        o = '数值是：' + b + '<br>'
+        document.write(o)
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

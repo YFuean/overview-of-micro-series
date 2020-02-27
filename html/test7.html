@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../image/VIP.png" type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      //string对象
+      var str = 'Hello world,welcome to the w3cschool、w3cschool.' //创建
+      var a = str.toLowerCase() //字符串专为小写
+      var b = str.toUpperCase() //字符串专为大写
+      var c = '     Hello world   '.trim() //去掉字符串两边的空白
+      var d = str.indexOf('welcome')
+      var e = str.replace('w3cschool', 'NIIT') //将字符串首次出现的w3cschool替换成NIIT
+      var f = str.replace(/w3cschool/g, 'NIIT') //将所有w3cschool替换成NIIT
+      var g = str.substring(6, 18)
+      console.log(str)
+      console.log(a)
+      console.log(b)
+      console.log(c)
+      console.log(d)
+      console.log(e)
+      console.log(f)
+      console.log(g)
+
+      //window对象
+      var winInnerHeight = window.innerHeight //窗口的文档显示区的高度
+      var winInnerWidth = window.innerWidth //窗口的文档显示区的宽度
+      var winOuterWidth = window.outerWidth //窗口的外部宽度，包含工具条与滚动条
+      var winOuterHeight = window.outerHeight //窗口的外部高度，包含工具条与滚动条
+      var winScreenLeft = window.screenLeft //相对于屏幕窗口的x坐标
+      var winScreenTop = window.screenTop //相对于屏幕窗口的y坐标
+      console.log('窗口的文档显示区的高度' + winInnerHeight)
+      console.log('窗口的文档显示区的宽度' + winInnerWidth)
+      console.log('窗口的外部宽度' + winOuterWidth)
+      console.log('窗口的外部高度' + winOuterHeight)
+      console.log('相对于屏幕窗口的x坐标' + winScreenLeft)
+      console.log('相对于屏幕窗口的y坐标' + winScreenTop)
+
+      alert('hello world') //等于window.alert('hello world')
+
+      var myWindow = window.open('http://localhost:5500/html/demo.html', 'demo', 'width=20,height=100') //打开窗口
+      myWindow.document.write('<p>这是一个新窗口</p>')
+      setTimeout(function() {
+        myWindow.close()
+      }, 3000) //三秒后关闭窗口
+
+      //clearTimeout()阻止函数的执行
+      var myVar
+      function myVarFunction() {
+        myVar = setTimeout(function() {
+          alert('Hello')
+        }, 3000)
+      }
+      function myStopFunction() {
+        clearTimeout(myVar)
+      }
+
+      //返回包含json文本的字符串
+      var string = { name: 'baidu', site: 'http://www.baidu.com' }
+      string_pretty1 = JSON.stringify(string)
+      document.write('只有一个参数情况：')
+      document.write('<br>')
+      document.write('<pre>' + string_pretty1 + '</pre>')
+      document.write('<br>')
+      string_pretty2 = JSON.stringify(string, null, 4) //使用四个空格缩进
+      document.write('使用参数情况：')
+      document.write('<br>')
+      document.write('<pre>' + string_pretty2 + '</pre>') //pre用于格式化输出
+
+      //math对象
+      //sqrt(),开平方
+      console.log(Math.sqrt(4))
+      //floor(),返回小于或等于一个给定数字的最大整数
+      console.log(Math.floor(45.23))
+      //random()，返回1到10之间的随机数
+      var number1 = Math.floor(Math.random() * 10 + 1)
+      console.log(number1)
+      //round()返回一个数字四舍五入后最接近的整数
+      var number2 = Math.round(20.49)
+      console.log(number2)
+
+      //时间对象
+      //存储当前的日期和时间
+      function printTime() {
+        var d = new Date()
+        var hours = d.getHours()
+        var mins = d.getMinutes()
+        var secs = d.getSeconds()
+        document.body.innerHTML = hours + ':' + mins + ':' + secs
+      }
+      setInterval(printTime, 1000)
+
+      //JavaScript日期以1970年01月01日00：00：00世界时间（UTC）计算。一天包含86400000毫秒
+      var d1 = new Date(86400000) //毫秒
+      var d2 = new Date('October 19, 2017 12:32:23') //日期字符串
+      var d3 = new Date(20, 2, 12, 01, 23, 0) //年，月，日，时，分，秒，毫秒
+      console.log(d1)
+      console.log(d2)
+      console.log(d3)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../image/VIP.png" type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="box"></div>
+      <div class="demo">
+        <span></span>
+        <span></span>
+        <span></span>
+        <p id="q1"></p>
+        <p id="q2"></p>
+        <p id="p1">这是一个段落</p>
+        <p id="p2">这是另一个段落</p>
+        <p id="p3">这是另另一个段落</p>
+        <div id="demo0">
+          <p id="pp1">这是段落</p>
+          <p id="pp2">这是段落</p>
+        </div>
+      </div>
+      <p class="demo"></p>
+      <img id="myimg" src="../image/circle1.png" alt="" />
+      <a href="http://www.baidu.com">百度</a>
+    </div>
+    <script>
+      //动画
+      //定义move()函数
+      var pos = 0
+      var box = document.getElementById('box')
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t) //clearInterval()停止定时器
+        } else {
+          pos += 1
+          box.style.left = pos + 'px'
+        }
+      }
+      //setInterval()，创建一个定时器并调用一个定义的间隔（以毫秒为单位）反复更改属性的函数,每10毫秒
+      var t = setInterval(move, 10)
+
+      //HTML DOM
+      var elem = document.getElementById('q1') //getElementById(),选择id=demo的元素
+      elem.innerHTML = 'Hello World' //elem对象的innerHTML属性内容
+      var arr = document.getElementsByClassName('demo') //getElementsByClassName(),选择class=demo的元素
+      arr[1].innerHTML = 'Hi I am Peter' //访问第二个元素
+      var sp = document.getElementsByTagName('span') //getElementsByTagName(),选择标签为span的元素
+      for (var x = 0; x < sp.length; x++) {
+        sp[x].innerHTML = 'hi there'
+      }
+
+      //使用DOM
+      var b = document.getElementById('demo0')
+      var arr1 = b.childNodes
+      for (var x1 = 0; x1 < arr1.length; x1++) {
+        arr1[x1].innerHTML = '新的文本'
+      }
+
+      //改变属性
+      var e1 = document.getElementById('myimg')
+      e1.src = '../image/circle2.png'
+      var e2 = document.getElementsByTagName('a')
+      e2[0].href = 'https://www.google.cn'
+      e2[0].innerHTML = 'google'
+
+      //改变样式
+      var c1 = document.getElementById('demo0')
+      c1.style.color = '#16a085'
+      c1.style.height = '70px'
+
+      //移除和添加元素
+      var p = document.createElement('p')
+      var node = document.createTextNode('一些新的文本')
+      p.appendChild(node) //添加文本到段落
+      var div = document.getElementById('container')
+      div.appendChild(p) //将段落添加到div中
+
+      //移除元素
+      var child = document.getElementById('p3')
+      child.parentNode.removeChild(child)
+
+      //替换元素
+      var p0 = document.createElement('p')
+      var node = document.createTextNode('这是新文本')
+      p0.appendChild(node)
+      var parent0 = document.getElementById('demo0')
+      var child0 = document.getElementById('pp1')
+      parent0.replaceChild(p0, child0)
+    </script>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background: rgb(170, 199, 170);
+        position: relative;
+      }
+      #box {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 144, 144);
+        position: absolute;
+      }
+    </style>
+  </body>
+</html>

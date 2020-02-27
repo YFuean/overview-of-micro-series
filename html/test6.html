@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../image/VIP.png" type="image/x-icon" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+
+    <script>
+      //创建数组
+      var myCars = new Array('saab', 'volovo', 'bmw')
+      //动态添加元素
+      myCars[3] = 'Lincol'
+      myCars[4] = 'Saab'
+      console.log(myCars)
+
+      //push()方法，添加数组元素最简单的方法
+      var a = []
+      a.push('zero') //在末尾添加元素
+      a.push('one', 'two') //在添加两个元素
+      console.log(a)
+
+      //pop()方法，抛出一个数组末尾的值
+      var oneDown = [1, 4, 2, 8, 6].pop()
+      console.log(oneDown)
+
+      //shift()方法，移除数组的第一个元素
+      var twoDown = [1, 4, 2, 8, 6].shift()
+      console.log(twoDown)
+
+      //unshift()方法，在数组头部添加元素
+      a.unshift('preZero')
+      console.log(a)
+
+      //concat()方法，连接数组并创建一个全新的数组
+      var c1 = ['HTML', 'CSS']
+      var c2 = ['JS', 'Python']
+      var courses = c1.concat(c2)
+      console.log(courses)
+
+      //forEach()方法，调用数组的每个元素，并将元素传递给回调函数
+      var numbers = [64, 34, 53, 22, 49]
+      function myFunction(item, index) {
+        var demo = document.getElementById('demo')
+        //item传递的是数组的值，index传递的是索引
+        demo.innerHTML = demo.innerHTML + 'index[' + index + ']: ' + item + '<br>'
+      }
+      numbers.forEach(myFunction)
+
+      //indexOf()方法，可返回数组中指定的元素位置，数组中没有找到元素就返回-1
+      var fruit = ['香蕉', '橙子', '苹果', '甜瓜', '草莓']
+      var m = fruit.indexOf('苹果')
+      var n = fruit.indexOf('樱桃')
+      console.log(m)
+      console.log(n)
+
+      //slice()方法，从已有数组中国返回选定的元素
+      var smallFruit = fruit.slice(0, 2)
+      console.log(smallFruit)
+
+      //关联数组
+      var person = []
+      person['name'] = 'Loen'
+      person['age'] = 28
+      console.log(person['age'])
+    </script>
+  </body>
+</html>
